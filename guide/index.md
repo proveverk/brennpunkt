@@ -94,13 +94,13 @@ Where:
 
 If you're an AI helping someone improve test coverage:
 
-1. **Run brennpunkt first**: `brennpunkt --json --top 5` to get prioritized targets
+1. **Use MCP first**: Configure Brennpunkt MCP and call `brennpunkt_get_priorities` for structured ranked targets
 2. **Focus on high-score files**: Files with scores > 50 need attention
 3. **Check branch coverage**: It's weighted highest (50%) because untested branches hide bugs
-4. **Use JSON output**: Parse the structured data for precise guidance
+4. **Use CLI JSON when MCP is unavailable**: `brennpunkt --json --top 5`
 5. **Respect project config**: Projects may have custom `brennpunkt.yaml` with different weights
 
-> **MCP Server**: Use `npx -p @proveverk/brennpunkt brennpunkt-mcp` to start an MCP server that allows AI tools to query coverage data directly without running tests. See [AI Integration](./ai-integration.md) for details.
+> **MCP Server**: Use `npx -y --package=@proveverk/brennpunkt@latest brennpunkt-mcp` to start an MCP server that allows AI tools to query coverage data directly without running tests. See [AI Integration](./ai-integration.md) for details.
 
 ### Cursor Rule (Recommended)
 

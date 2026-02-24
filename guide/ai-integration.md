@@ -168,13 +168,7 @@ AI: Here are the top 3 files to test: ...
 
 ### Setting Up MCP
 
-#### 1. Install Brennpunkt
-
-```bash
-npm install -g @proveverk/brennpunkt
-```
-
-#### 2. Configure MCP Client (One-Time Setup)
+#### 1. Configure MCP Client (One-Time Setup)
 
 Add to your MCP configuration (**Cursor** or **Claude Desktop**):
 
@@ -183,13 +177,15 @@ Add to your MCP configuration (**Cursor** or **Claude Desktop**):
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "--package=@proveverk/brennpunkt@latest", "brennpunkt-mcp"]
     }
   }
 }
 ```
 
-Or if installed globally (`npm install -g @proveverk/brennpunkt`):
+#### 2. Optional: Global Install Alternative
+
+If you prefer a global install (`npm install -g @proveverk/brennpunkt`), use:
 
 ```json
 {
