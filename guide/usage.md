@@ -171,10 +171,10 @@ brennpunkt --top 10
 
 ```bash
 # GitHub Actions / CI pipeline
-npx @redaksjon/brennpunkt --top 10
+npx @proveverk/brennpunkt --top 10
 
 # Save JSON artifact
-npx @redaksjon/brennpunkt --json > coverage-priority.json
+npx @proveverk/brennpunkt --json > coverage-priority.json
 ```
 
 ### Automation

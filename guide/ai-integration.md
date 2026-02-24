@@ -74,7 +74,7 @@ Create or edit `.cursorrules` in your project root:
 
 When working on test coverage improvements:
 
-1. Run `npx @redaksjon/brennpunkt --json --top 5` to get prioritized files
+1. Run `npx @proveverk/brennpunkt --json --top 5` to get prioritized files
 2. Focus on the highest priority file first (highest priorityScore)
 3. Pay special attention to:
    - Files with low branch coverage (untested conditionals hide bugs)
@@ -171,7 +171,7 @@ AI: Here are the top 3 files to test: ...
 #### 1. Install Brennpunkt
 
 ```bash
-npm install -g @redaksjon/brennpunkt
+npm install -g @proveverk/brennpunkt
 ```
 
 #### 2. Configure MCP Client (One-Time Setup)
@@ -183,13 +183,13 @@ Add to your MCP configuration (**Cursor** or **Claude Desktop**):
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@redaksjon/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
     }
   }
 }
 ```
 
-Or if installed globally (`npm install -g @redaksjon/brennpunkt`):
+Or if installed globally (`npm install -g @proveverk/brennpunkt`):
 
 ```json
 {

@@ -5,13 +5,13 @@ Use brennpunkt as a library in your Node.js applications.
 ## Installation
 
 ```bash
-npm install @redaksjon/brennpunkt
+npm install @proveverk/brennpunkt
 ```
 
 ## Basic Usage
 
 ```typescript
-import { parseLcov, analyzeCoverage, formatJson, formatTable } from '@redaksjon/brennpunkt';
+import { parseLcov, analyzeCoverage, formatJson, formatTable } from '@proveverk/brennpunkt';
 import { readFileSync } from 'node:fs';
 
 // Read coverage file
@@ -192,7 +192,7 @@ if (discovery) {
 ### Custom Analysis Pipeline
 
 ```typescript
-import { parseLcov, analyzeCoverage } from '@redaksjon/brennpunkt';
+import { parseLcov, analyzeCoverage } from '@proveverk/brennpunkt';
 import { readFileSync, writeFileSync } from 'node:fs';
 
 async function runAnalysis() {
@@ -241,7 +241,7 @@ export default defineConfig({
       reporter: ['lcov', 'text'],
     },
     onFinished: async () => {
-      const { parseLcov, analyzeCoverage, formatTable } = await import('@redaksjon/brennpunkt');
+      const { parseLcov, analyzeCoverage, formatTable } = await import('@proveverk/brennpunkt');
       const { readFileSync } = await import('node:fs');
       
       const lcov = readFileSync('coverage/lcov.info', 'utf-8');
@@ -268,7 +268,7 @@ export default defineConfig({
 ### AI/LLM Integration
 
 ```typescript
-import { parseLcov, analyzeCoverage } from '@redaksjon/brennpunkt';
+import { parseLcov, analyzeCoverage } from '@proveverk/brennpunkt';
 import { readFileSync } from 'node:fs';
 
 // Get actionable data for AI assistants
@@ -320,5 +320,5 @@ import type {
   AnalysisResult,
   PriorityWeights,
   AnalyzerOptions
-} from '@redaksjon/brennpunkt';
+} from '@proveverk/brennpunkt';
 ```

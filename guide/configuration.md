@@ -8,7 +8,7 @@ Create a `brennpunkt.yaml` file in your project root:
 
 ```yaml
 # Brennpunkt Configuration
-# https://github.com/redaksjon/brennpunkt
+# https://github.com/proveverk/brennpunkt
 
 # Path to lcov.info coverage file
 coveragePath: coverage/lcov.info

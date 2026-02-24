@@ -58,7 +58,7 @@ jobs:
       
       # Add coverage priority analysis
       - name: Coverage Priority Analysis
-        run: npx @redaksjon/brennpunkt --top 10
+        run: npx @proveverk/brennpunkt --top 10
 ```
 
 ### Save JSON Artifact
@@ -67,7 +67,7 @@ Store the priority report for later analysis:
 
 ```yaml
       - name: Generate Priority Report
-        run: npx @redaksjon/brennpunkt --json > coverage-priority.json
+        run: npx @proveverk/brennpunkt --json > coverage-priority.json
       
       - uses: actions/upload-artifact@v4
         with:
@@ -83,7 +83,7 @@ Post coverage priorities as a PR comment:
       - name: Coverage Priority Analysis
         id: coverage
         run: |
-          OUTPUT=$(npx @redaksjon/brennpunkt --top 5 2>&1)
+          OUTPUT=$(npx @proveverk/brennpunkt --top 5 2>&1)
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo "$OUTPUT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -109,7 +109,7 @@ test:
   script:
     - npm ci
     - npm test -- --coverage
-    - npx @redaksjon/brennpunkt --top 10
+    - npx @proveverk/brennpunkt --top 10
   artifacts:
     reports:
       coverage_report:
@@ -130,12 +130,12 @@ pipeline {
             steps {
                 sh 'npm ci'
                 sh 'npm test -- --coverage'
-                sh 'npx @redaksjon/brennpunkt --top 10'
+                sh 'npx @proveverk/brennpunkt --top 10'
             }
         }
         stage('Coverage Report') {
             steps {
-                sh 'npx @redaksjon/brennpunkt --json > coverage-priority.json'
+                sh 'npx @proveverk/brennpunkt --json > coverage-priority.json'
                 archiveArtifacts artifacts: 'coverage-priority.json'
             }
         }
@@ -155,7 +155,7 @@ jobs:
       - checkout
       - run: npm ci
       - run: npm test -- --coverage
-      - run: npx @redaksjon/brennpunkt --top 10
+      - run: npx @proveverk/brennpunkt --top 10
       - store_artifacts:
           path: coverage
           destination: coverage
@@ -172,7 +172,7 @@ Block builds when critical files have unacceptable coverage:
 # scripts/coverage-gate.sh
 
 # Get the highest priority score
-TOP_SCORE=$(npx @redaksjon/brennpunkt --json --top 1 | jq '.files[0].priorityScore // 0')
+TOP_SCORE=$(npx @proveverk/brennpunkt --json --top 1 | jq '.files[0].priorityScore // 0')
 
 echo "Top priority score: $TOP_SCORE"
 
@@ -181,7 +181,7 @@ if (( $(echo "$TOP_SCORE > 100" | bc -l) )); then
   echo "❌ High-priority coverage gap detected (score: $TOP_SCORE)"
   echo ""
   echo "Files needing attention:"
-  npx @redaksjon/brennpunkt --top 5
+  npx @proveverk/brennpunkt --top 5
   exit 1
 fi
 
@@ -197,15 +197,15 @@ echo "✅ Coverage priorities within acceptable range"
 CRITICAL_THRESHOLD=150
 WARNING_THRESHOLD=75
 
-TOP_SCORE=$(npx @redaksjon/brennpunkt --json --top 1 | jq '.files[0].priorityScore // 0')
+TOP_SCORE=$(npx @proveverk/brennpunkt --json --top 1 | jq '.files[0].priorityScore // 0')
 
 if (( $(echo "$TOP_SCORE > $CRITICAL_THRESHOLD" | bc -l) )); then
   echo "❌ CRITICAL: Coverage gap too high (score: $TOP_SCORE > $CRITICAL_THRESHOLD)"
-  npx @redaksjon/brennpunkt --top 5
+  npx @proveverk/brennpunkt --top 5
   exit 1
 elif (( $(echo "$TOP_SCORE > $WARNING_THRESHOLD" | bc -l) )); then
   echo "⚠️ WARNING: Coverage gap detected (score: $TOP_SCORE > $WARNING_THRESHOLD)"
-  npx @redaksjon/brennpunkt --top 5
+  npx @proveverk/brennpunkt --top 5
   # Don't fail, just warn
 fi
 
@@ -219,7 +219,7 @@ Run brennpunkt before committing:
 ```bash
 # .husky/pre-commit
 npm test -- --coverage
-npx @redaksjon/brennpunkt --top 5
+npx @proveverk/brennpunkt --top 5
 ```
 
 ## Scheduled Reports
@@ -253,7 +253,7 @@ jobs:
           echo "Generated: $(date)" >> report.md
           echo "" >> report.md
           echo '```' >> report.md
-          npx @redaksjon/brennpunkt --top 20 >> report.md
+          npx @proveverk/brennpunkt --top 20 >> report.md
           echo '```' >> report.md
       
       - name: Create Issue
@@ -273,10 +273,10 @@ test:
 	npm test -- --coverage
 
 coverage: test
-	npx @redaksjon/brennpunkt --top 10
+	npx @proveverk/brennpunkt --top 10
 
 priority:
-	npx @redaksjon/brennpunkt --json > coverage-priority.json
+	npx @proveverk/brennpunkt --json > coverage-priority.json
 
 check: test
 	@./scripts/coverage-gate.sh

@@ -10,13 +10,13 @@ Get brennpunkt working in 2 minutes.
 ## Installation
 
 ```bash
-npm install -g @redaksjon/brennpunkt
+npm install -g @proveverk/brennpunkt
 ```
 
 Or use directly with npx:
 
 ```bash
-npx @redaksjon/brennpunkt
+npx @proveverk/brennpunkt
 ```
 
 ## First Analysis

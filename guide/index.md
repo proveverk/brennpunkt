@@ -100,7 +100,7 @@ If you're an AI helping someone improve test coverage:
 4. **Use JSON output**: Parse the structured data for precise guidance
 5. **Respect project config**: Projects may have custom `brennpunkt.yaml` with different weights
 
-> **MCP Server**: Use `npx -p @redaksjon/brennpunkt brennpunkt-mcp` to start an MCP server that allows AI tools to query coverage data directly without running tests. See [AI Integration](./ai-integration.md) for details.
+> **MCP Server**: Use `npx -p @proveverk/brennpunkt brennpunkt-mcp` to start an MCP server that allows AI tools to query coverage data directly without running tests. See [AI Integration](./ai-integration.md) for details.
 
 ### Cursor Rule (Recommended)
 
@@ -111,7 +111,7 @@ Add this to your project's `.cursorrules` file for automatic coverage analysis:
 
 When working on test coverage improvements:
 
-1. Run `npx @redaksjon/brennpunkt --json --top 5` to get prioritized files
+1. Run `npx @proveverk/brennpunkt --json --top 5` to get prioritized files
 2. Focus on the highest priority file first (highest priorityScore)
 3. Pay special attention to:
    - Files with low branch coverage (untested conditionals hide bugs)
