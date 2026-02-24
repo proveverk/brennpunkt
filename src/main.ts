@@ -199,7 +199,7 @@ function generateConfigFile(outputPath?: string): void {
     const filePath = outputPath || resolve(process.cwd(), CONFIG_FILE_NAME);
     
     const configContent = `# Brennpunkt Configuration
-# https://github.com/redaksjon/brennpunkt
+# https://github.com/proveverk/brennpunkt
 
 # Path to lcov.info coverage file
 # coveragePath: coverage/lcov.info

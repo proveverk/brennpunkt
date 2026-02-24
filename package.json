@@ -1,5 +1,5 @@
 {
-  "name": "@redaksjon/brennpunkt",
+  "name": "@proveverk/brennpunkt",
   "version": "0.1.10-dev.0",
   "description": "Coverage priority analyzer - identify where to focus testing efforts",
   "main": "dist/index.js",
@@ -19,9 +19,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redaksjon/brennpunkt.git"
+    "url": "git+https://github.com/proveverk/brennpunkt.git"
   },
-  "homepage": "https://github.com/redaksjon/brennpunkt",
+  "homepage": "https://github.com/proveverk/brennpunkt",
   "scripts": {
     "build": "npm run lint && tsc --noEmit && vite build && node scripts/copy-assets.mjs && chmod +x dist/main.js dist/mcp/server.js",
     "dev": "vite",
