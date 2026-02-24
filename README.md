@@ -1,12 +1,12 @@
 # Brennpunkt
 
-**Coverage Priority Analyzer** — Parses `lcov.info` and ranks files by testing priority. Helps answer: *"Where should I focus testing efforts next?"*
+**MCP-first Coverage Priority Analyzer** — Exposes structured coverage intelligence to AI tools and also works as a CLI. Parses `lcov.info` and ranks files by testing priority.
 
 <!-- Test publish 2026-01-22 -->
 
 ## What is Brennpunkt?
 
-Brennpunkt is a command-line tool that analyzes test coverage reports and tells you **where to focus your testing efforts for maximum impact**. Instead of showing you raw percentages, it calculates a priority score for each file based on coverage gaps, file size, and configurable weights.
+Brennpunkt is primarily an MCP server for AI-assisted development, with a CLI for direct terminal workflows. It analyzes test coverage reports and tells you **where to focus your testing efforts for maximum impact**. Instead of showing raw percentages, it calculates a priority score for each file based on coverage gaps, file size, and configurable weights.
 
 **Think of it as a coverage report that actually tells you what to do next.**
 
@@ -75,7 +75,7 @@ Traditional coverage tools show you *what* isn't covered. They don't tell you *w
 
 **Brennpunkt was built to solve this.** Instead of presenting raw percentages, it calculates a **priority score** that weighs coverage gaps against file importance. Run one command and immediately see which files will have the biggest impact on your coverage goals.
 
-It was also designed with **agentic coding tools** in mind. When an AI assistant needs to improve test coverage, it shouldn't wade through percentage tables—it needs a ranked list of where to focus. Brennpunkt's JSON output integrates directly into automated workflows, giving coding agents clear, actionable targets.
+It was designed with **agentic coding tools** in mind. When an AI assistant needs to improve test coverage, it shouldn't wade through percentage tables—it needs a ranked list of where to focus. Brennpunkt's MCP tools/resources/prompts provide direct structured access, and the CLI JSON output supports workflows that are not MCP-enabled.
 
 ## Installation
 
@@ -516,7 +516,7 @@ Prompts transform brennpunkt from a data provider to a coverage improvement part
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "--package=@proveverk/brennpunkt@latest", "brennpunkt-mcp"]
     }
   }
 }
