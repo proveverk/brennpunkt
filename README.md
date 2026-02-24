@@ -80,13 +80,13 @@ It was also designed with **agentic coding tools** in mind. When an AI assistant
 ## Installation
 
 ```bash
-npm install -g @redaksjon/brennpunkt
+npm install -g @proveverk/brennpunkt
 ```
 
 Or use directly with npx:
 
 ```bash
-npx @redaksjon/brennpunkt
+npx @proveverk/brennpunkt
 ```
 
 ## Usage
@@ -174,7 +174,7 @@ Create a `brennpunkt.yaml` file in your project root:
 
 ```yaml
 # Brennpunkt Configuration
-# https://github.com/redaksjon/brennpunkt
+# https://github.com/proveverk/brennpunkt
 
 # Path to lcov.info coverage file
 coveragePath: coverage/lcov.info
@@ -395,11 +395,11 @@ jobs:
       
       # Add coverage priority analysis
       - name: Coverage Priority Analysis
-        run: npx @redaksjon/brennpunkt --top 10
+        run: npx @proveverk/brennpunkt --top 10
       
       # Optional: Save JSON report as artifact
       - name: Generate Priority Report
-        run: npx @redaksjon/brennpunkt --json > coverage-priority.json
+        run: npx @proveverk/brennpunkt --json > coverage-priority.json
       
       - uses: actions/upload-artifact@v4
         with:
@@ -416,10 +416,10 @@ For any CI system, add brennpunkt after your test command:
 npm test -- --coverage
 
 # Analyze and display priorities
-npx @redaksjon/brennpunkt --top 10
+npx @proveverk/brennpunkt --top 10
 
 # Or save for later processing
-npx @redaksjon/brennpunkt --json > coverage-priority.json
+npx @proveverk/brennpunkt --json > coverage-priority.json
 ```
 
 ### Fail on High-Priority Gaps (Advanced)
@@ -516,13 +516,13 @@ Prompts transform brennpunkt from a data provider to a coverage improvement part
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@redaksjon/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
     }
   }
 }
 ```
 
-Or if installed globally (`npm install -g @redaksjon/brennpunkt`):
+Or if installed globally (`npm install -g @proveverk/brennpunkt`):
 
 ```json
 {
@@ -600,7 +600,7 @@ Don't want to configure MCP? Add this to your project's `.cursorrules` file for 
 
 When working on test coverage improvements:
 
-1. Run `npx @redaksjon/brennpunkt --json --top 5` to get prioritized files
+1. Run `npx @proveverk/brennpunkt --json --top 5` to get prioritized files
 2. Focus on the highest priority file first (highest priorityScore)
 3. Pay special attention to:
    - Files with low branch coverage (untested conditionals hide bugs)
@@ -623,7 +623,7 @@ The AI will automatically run brennpunkt and provide actionable recommendations.
 You can also use brennpunkt as a library:
 
 ```typescript
-import { parseLcov, analyzeCoverage, formatJson } from '@redaksjon/brennpunkt';
+import { parseLcov, analyzeCoverage, formatJson } from '@proveverk/brennpunkt';
 import { readFileSync } from 'node:fs';
 
 const lcovContent = readFileSync('coverage/lcov.info', 'utf-8');

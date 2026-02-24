@@ -15,10 +15,10 @@ function App() {
                         <span className="highlight">Stop guessing. Start prioritizing.</span>
                     </p>
                     <div className="hero-actions">
-                        <a href="https://www.npmjs.com/package/@redaksjon/brennpunkt" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                            npm install -g @redaksjon/brennpunkt
+                        <a href="https://www.npmjs.com/package/@proveverk/brennpunkt" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            npm install -g @proveverk/brennpunkt
                         </a>
-                        <a href="https://github.com/redaksjon/brennpunkt" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/proveverk/brennpunkt" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                             View on GitHub
                         </a>
                     </div>
@@ -698,7 +698,7 @@ top: 20`}</pre>
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@redaksjon/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
     }
   }
 }`;
@@ -712,7 +712,7 @@ top: 20`}</pre>
   "mcpServers": {
     "brennpunkt": {
       "command": "npx",
-      "args": ["-y", "-p", "@redaksjon/brennpunkt", "brennpunkt-mcp"]
+      "args": ["-y", "-p", "@proveverk/brennpunkt", "brennpunkt-mcp"]
     }
   }
 }`}</pre>
@@ -799,7 +799,7 @@ top: 20`}</pre>
 
 When working on test coverage improvements:
 
-1. Run \`npx @redaksjon/brennpunkt --json --top 5\` to get prioritized files
+1. Run \`npx @proveverk/brennpunkt --json --top 5\` to get prioritized files
 2. Focus on the highest priority file first (highest priorityScore)
 3. Pay special attention to:
    - Files with low branch coverage (untested conditionals hide bugs)
@@ -818,7 +818,7 @@ Suggest specific test cases based on the uncovered branches and functions.`;
 
 When working on test coverage improvements:
 
-1. Run \`npx @redaksjon/brennpunkt --json --top 5\` to get prioritized files
+1. Run \`npx @proveverk/brennpunkt --json --top 5\` to get prioritized files
 2. Focus on the highest priority file first (highest priorityScore)
 3. Pay special attention to:
    - Files with low branch coverage (untested conditionals hide bugs)
@@ -875,7 +875,7 @@ Suggest specific test cases based on the uncovered branches and functions.`}</pr
                             <p className="integration-desc">Add coverage priority analysis to your CI pipeline:</p>
                             <pre className="code-pre">{`# After test step
 - name: Coverage Priority
-  run: npx @redaksjon/brennpunkt --top 10
+  run: npx @proveverk/brennpunkt --top 10
 
 # Save JSON artifact
 - run: brennpunkt --json > priority.json`}</pre>
@@ -909,7 +909,7 @@ fi`}</pre>
                             <div className="step-number">1</div>
                             <div className="step-content">
                                 <h4>Install</h4>
-                                <code>npm install -g @redaksjon/brennpunkt</code>
+                                <code>npm install -g @proveverk/brennpunkt</code>
                             </div>
                         </div>
                         <div className="step">
@@ -997,10 +997,10 @@ fi`}</pre>
                     <h2>Stop Guessing. Start Prioritizing.</h2>
                     <p>Know exactly where to invest your testing efforts for maximum impact.</p>
                     <div className="cta-buttons">
-                        <a href="https://www.npmjs.com/package/@redaksjon/brennpunkt" className="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.npmjs.com/package/@proveverk/brennpunkt" className="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                             Install from NPM
                         </a>
-                        <a href="https://github.com/redaksjon/brennpunkt" className="btn btn-secondary btn-large" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/proveverk/brennpunkt" className="btn btn-secondary btn-large" target="_blank" rel="noopener noreferrer">
                             View on GitHub
                         </a>
                     </div>
@@ -1009,7 +1009,7 @@ fi`}</pre>
 
             <footer className="footer">
                 <div className="container">
-                    <p>Apache 2.0 License | Built by <a href="https://github.com/redaksjon">Redaksjon</a></p>
+                    <p>Apache 2.0 License | Built by <a href="https://github.com/proveverk">proveverk</a></p>
                 </div>
             </footer>
         </div>
